@@ -1,9 +1,7 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Unaiz");
-Console.WriteLine("Trying");
-var arr = new[] { 1, 2, 3, 4, 5, 5, 6, 8 };
-foreach(var number in arr)
-{
-    Console.WriteLine(number);
-}
-Console.ReadKey();
+﻿
+Console.WriteLine("Hello!");
+Console.WriteLine("Whats do you want to do?");
+Console.WriteLine("[S] ee all TODOs");
+Console.WriteLine("[A] dd a TODO");
+Console.WriteLine("[R] emove a TODO");
+Console.WriteLine("[E] xit");
