@@ -1,0 +1,15 @@
+D:\Assignment\ToDoList\ToDoList\bin\Debug\net6.0\ToDoList.exe
+D:\Assignment\ToDoList\ToDoList\bin\Debug\net6.0\ToDoList.deps.json
+D:\Assignment\ToDoList\ToDoList\bin\Debug\net6.0\ToDoList.runtimeconfig.json
+D:\Assignment\ToDoList\ToDoList\bin\Debug\net6.0\ToDoList.dll
+D:\Assignment\ToDoList\ToDoList\bin\Debug\net6.0\ToDoList.pdb
+D:\Assignment\ToDoList\ToDoList\obj\Debug\net6.0\ToDoList.csproj.AssemblyReference.cache
+D:\Assignment\ToDoList\ToDoList\obj\Debug\net6.0\ToDoList.GeneratedMSBuildEditorConfig.editorconfig
+D:\Assignment\ToDoList\ToDoList\obj\Debug\net6.0\ToDoList.AssemblyInfoInputs.cache
+D:\Assignment\ToDoList\ToDoList\obj\Debug\net6.0\ToDoList.AssemblyInfo.cs
+D:\Assignment\ToDoList\ToDoList\obj\Debug\net6.0\ToDoList.csproj.CoreCompileInputs.cache
+D:\Assignment\ToDoList\ToDoList\obj\Debug\net6.0\ToDoList.dll
+D:\Assignment\ToDoList\ToDoList\obj\Debug\net6.0\refint\ToDoList.dll
+D:\Assignment\ToDoList\ToDoList\obj\Debug\net6.0\ToDoList.pdb
+D:\Assignment\ToDoList\ToDoList\obj\Debug\net6.0\ToDoList.genruntimeconfig.cache
+D:\Assignment\ToDoList\ToDoList\obj\Debug\net6.0\ref\ToDoList.dll
