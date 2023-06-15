@@ -1,11 +1,11 @@
-﻿using System.Xml;
-
+﻿
 Console.WriteLine("Hello!");
 string userInput;
 var toDoList = new List<string>();
 
 do
 {
+    Console.WriteLine("\n\n");
     Console.WriteLine("Whats do you want to do?");
     Console.WriteLine("[S]ee all TODOs.");
     Console.WriteLine("[A]dd a TODO.");
@@ -20,7 +20,7 @@ do
     }
     else if (userInput.ToUpper() == "A")
     {
-        Console.WriteLine(userInput);
+        AddToDos(toDoList);
     }
     else if (userInput.ToUpper() == "R")
     {
@@ -43,22 +43,31 @@ void SeeAllToDo(List<string> list)
     foreach (string item in list)
     {
         list.IndexOf(item);
-        Console.WriteLine($"{list.IndexOf(item)}. {item}");
+        Console.WriteLine($"{list.IndexOf(item)+1}. {item}");
     }
 }
 List<string> AddToDos(List<string> list)
 {
-    Console.WriteLine("Enter the TODO description: ");
-   
+    while (true)
+    {
+        Console.WriteLine("Enter the TODO description: ");
         string inputToDo = Console.ReadLine();
         if (list.Contains(inputToDo))
         {
-            Console.WriteLine("The description must be unique."); 
+            Console.WriteLine("The description must be unique. \n");
         }
-       
-        list.Add(inputToDo);
-    
-    
+        else if (string.IsNullOrWhiteSpace(inputToDo))
+        {
+            Console.WriteLine("The description cannot be empty.\n");
+        }
+        else
+        {
+            list.Add(inputToDo);
+            Console.WriteLine("TODO successfully added : " + inputToDo);
+            Console.WriteLine("\n");
+            return list;
+        }
+    };
     return list;
 }
 
