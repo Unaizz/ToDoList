@@ -4,8 +4,6 @@ using System;
 Console.WriteLine("Hello!");
 string userInput;
 var toDoList = new List<string>();
-
-Console.WriteLine("\n");
 do
 {
     Console.WriteLine("\n");
@@ -20,11 +18,11 @@ do
 
     if (userInput == "S")
     {
-        SeeAllToDo(toDoList);
+        SeeAllToDo();
     }
     else if (userInput == "A")
     {
-        AddToDos(toDoList);
+        AddToDos();
     }
     else if (userInput == "R")
     {
@@ -39,25 +37,27 @@ do
         Console.WriteLine("Invalid Choice!");
     }
 
-} while (userInput.ToUpper() != "E");
+} while (userInput != "E");
 
 Console.ReadLine();
 #region "SEE ALL TODOs"
-void SeeAllToDo(List<string> list)
+void SeeAllToDo()
 {
-    if (list.Count == 0)
+    if (toDoList.Count == 0)
     {
         Console.WriteLine("No TODOs have been added yet.");
     }
-    foreach (string item in list)
+    else
     {
-        list.IndexOf(item);
-        Console.WriteLine($"{list.IndexOf(item) + 1}. {item}");
+        for (int i = 0; i < toDoList.Count; i++)
+        {
+            Console.WriteLine($"{i + 1}. {toDoList[i]}");
+        }
     }
 }
 #endregion
 #region "ADD TODOs"
-List<string> AddToDos(List<string> list)
+void AddToDos()
 {
     while (true)
     {
@@ -65,7 +65,7 @@ List<string> AddToDos(List<string> list)
 
         string inputToDo = Console.ReadLine();
 
-        if (list.Contains(inputToDo))
+        if (toDoList.Contains(inputToDo))
         {
             Console.WriteLine("The description must be unique. \n");
         }
@@ -75,36 +75,30 @@ List<string> AddToDos(List<string> list)
         }
         else
         {
-            list.Add(inputToDo);
+            toDoList.Add(inputToDo);
             Console.WriteLine("TODO successfully added : " + inputToDo);
-            return list;
+            return;
         }
     };
-    return list;
 }
 #endregion
 #region "REMOVE ALL TODOs"
-List<string> RemoveToDo(List<string> list)
+void RemoveToDo(List<string> list)
 {
-    if (list.Count == 0)
-    {
-        Console.WriteLine("No TODOs have been added yet.");
-        return list;
-    }
-
-    SeeAllToDo(list);
-    Console.WriteLine("\nSelect the index of the TODO you want to remove: ");
+    
+    SeeAllToDo();
+    Console.WriteLine("Select the index of the TODO you want to remove: ");
     var toDoIndex = Console.ReadLine();
     bool tryParsing = int.TryParse(toDoIndex, out int toDoIndexNumber);
     if (!tryParsing)
     {
         Console.WriteLine("The given index is not valid.");
-        return list;
+        return;
     }
     if (toDoIndexNumber <= 0)
     {
         Console.WriteLine("The given index is not valid.");
-        return list;
+        return;
     }
     else if (string.IsNullOrWhiteSpace(toDoIndex.ToString()))
     {
@@ -113,7 +107,7 @@ List<string> RemoveToDo(List<string> list)
     var removedToDo = list.ElementAt(toDoIndexNumber - 1);
     list.RemoveAt(toDoIndexNumber - 1);
     Console.WriteLine("TODO removed : " + removedToDo);
-    return list;
+    return;
 }
 #endregion
 
